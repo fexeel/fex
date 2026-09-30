@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="edges.txt" />
-    <Content Include="point.txt" />
+    <Content Include="points.txt" />
     <Content Include="vertices.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

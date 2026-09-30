@@ -32,15 +32,27 @@ namespace пис_1_лаба
                 $"X = {point.X}, Y = {point.Y}, Color = {point.color}");
         }
 
+        static List<Point> ReadPoints(string fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
+            List<Point> points = new List<Point>();
+
+            foreach (string line in lines)
+            {
+                points.Add(CreatePoint(line));
+            }
+
+            return points;
+        }
+
         static void Main()
         {
-            Console.WriteLine("Введите точку:");
+            List<Point> points = ReadPoints("C:\\Users\\Валерия\\Desktop\\fex\\пис 1 лаба\\пис 1 лаба\\points.txt");
 
-            string line = Console.ReadLine();
-
-            Point point = CreatePoint(line);
-
-            PrintPoint(point);
+            foreach (Point point in points)
+            {
+                PrintPoint(point);
+            }
         }
     }
 }
