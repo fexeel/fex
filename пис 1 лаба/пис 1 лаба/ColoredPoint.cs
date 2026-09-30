@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace пис_1_лаба
 {
-    internal class ColoredPoint
+    class ColoredPoint : Point
     {
+        public string Name;
     }
 }

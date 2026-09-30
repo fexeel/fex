@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace пис_1_лаба
 {
-    internal class Point3D
+    class Point3D : Point
     {
+        public double Z;
     }
 }
