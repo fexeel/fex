@@ -26,15 +26,13 @@ namespace пис_1_лаба
             return point;
         }
 
-        static void PrintPoint(Point point)
+        static string[] ReadFile(string fileName)
         {
-            Console.WriteLine(
-                $"X = {point.X}, Y = {point.Y}, Color = {point.color}");
+            return File.ReadAllLines(fileName);
         }
 
-        static List<Point> ReadPoints(string fileName)
+        static List<Point> CreatePoints(string[] lines)
         {
-            string[] lines = File.ReadAllLines(fileName);
             List<Point> points = new List<Point>();
 
             foreach (string line in lines)
@@ -45,14 +43,27 @@ namespace пис_1_лаба
             return points;
         }
 
-        static void Main()
+        static void PrintPoint(Point point)
         {
-            List<Point> points = ReadPoints("C:\\Users\\Валерия\\Desktop\\fex\\пис 1 лаба\\пис 1 лаба\\points.txt");
+            Console.WriteLine(
+                $"X = {point.X}, Y = {point.Y}, Color = {point.color}");
+        }
 
+        static void PrintPoints(List<Point> points)
+        {
             foreach (Point point in points)
             {
                 PrintPoint(point);
             }
+        }
+
+        static void Main()
+        {
+            string[] lines = ReadFile("C:\\Users\\Валерия\\Desktop\\fex\\пис 1 лаба\\пис 1 лаба\\points.txt");
+
+            List<Point> points = CreatePoints(lines);
+
+            PrintPoints(points);
         }
     }
 }
